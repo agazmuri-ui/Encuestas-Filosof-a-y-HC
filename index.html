@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filosofía y Humanismo Cristiano · Colegio San Benito 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo: #8B1A1A;
+    --rojo-claro: #B22222;
+    --crema: #F7F2E8;
+    --crema-oscura: #EDE5D0;
+    --dorado: #C4963A;
+    --dorado-claro: #E8C97A;
+    --gris-oscuro: #1E1E1E;
+    --gris-medio: #4A4A4A;
+    --gris-claro: #9A9A9A;
+    --blanco: #FFFFFF;
+    --verde: #2D6A4F;
+    --verde-claro: #52B788;
+    --naranja: #E07B39;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--crema);
+    color: var(--gris-oscuro);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--rojo);
+    color: var(--blanco);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 48px 32px;
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+  }
+  .header-escudo {
+    width: 72px;
+    height: 72px;
+    background: var(--dorado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--rojo);
+    flex-shrink: 0;
+    border: 3px solid rgba(255,255,255,0.3);
+  }
+  .header-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .header-text .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .header-stats {
+    margin-left: auto;
+    display: flex;
+    gap: 32px;
+    align-items: flex-end;
+  }
+  .header-stat {
+    text-align: center;
+  }
+  .header-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dorado-claro);
+    line-height: 1;
+  }
+  .header-stat .label {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+  }
+  .header-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--dorado) 0%, var(--dorado-claro) 50%, transparent 100%);
+  }
+
+  /* FILTROS */
+  .filtros-section {
+    background: var(--gris-oscuro);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .filtros-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .filtros-label {
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris-claro);
+    white-space: nowrap;
+  }
+  .filtro-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .filtro-btn {
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    color: rgba(255,255,255,0.65);
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .filtro-btn:hover { border-color: var(--dorado); color: var(--dorado); }
+  .filtro-btn.active { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+  .filtro-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.1); margin: 0 4px; }
+  .filtros-resultado {
+    margin-left: auto;
+    font-size: 15px;
+    color: var(--dorado-claro);
+    font-weight: 500;
+  }
+
+  /* MAIN */
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+
+  /* SECCIÓN */
+  .seccion {
+    margin-bottom: 56px;
+  }
+  .seccion-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--rojo);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--crema-oscura);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .seccion-titulo::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--dorado);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .col-span-2 { grid-column: span 2; }
+
+  /* TARJETA */
+  .card {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .card-titulo {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gris-claro);
+    margin-bottom: 16px;
+  }
+
+  /* KPI */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .kpi {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+  }
+  .kpi:hover { transform: translateY(-2px); }
+  .kpi .valor {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .kpi .kpi-label {
+    font-size: 15px;
+    color: var(--gris-claro);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+  .kpi.verde .valor { color: var(--verde); }
+  .kpi.rojo .valor { color: var(--rojo-claro); }
+  .kpi.dorado .valor { color: var(--dorado); }
+  .kpi.azul .valor { color: #2563EB; }
+
+  /* BARRAS */
+  .barra-container { margin-bottom: 10px; }
+  .barra-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+  .barra-nombre { font-size: 16px; color: var(--gris-medio); font-weight: 500; }
+  .barra-valor { font-size: 16px; font-weight: 600; color: var(--gris-oscuro); }
+  .barra-track { height: 12px; background: var(--crema-oscura); border-radius: 4px; overflow: hidden; }
+  .barra-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+  .barra-fill.rojo { background: linear-gradient(90deg, var(--rojo), var(--rojo-claro)); }
+  .barra-fill.dorado { background: linear-gradient(90deg, var(--dorado), var(--dorado-claro)); }
+  .barra-fill.verde { background: linear-gradient(90deg, var(--verde), var(--verde-claro)); }
+  .barra-fill.naranja { background: linear-gradient(90deg, var(--naranja), #F4A261); }
+  .barra-fill.gris { background: linear-gradient(90deg, #666, #999); }
+
+  /* DONUT */
+  .donut-wrap { display: flex; align-items: center; gap: 24px; }
+  .donut-svg { flex-shrink: 0; }
+  .donut-leyenda { flex: 1; }
+  .leyenda-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 16px; }
+  .leyenda-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* TABLA */
+  table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  th { text-align: left; padding: 10px 14px; font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gris-claro); border-bottom: 2px solid var(--crema-oscura); }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--crema-oscura); color: var(--gris-medio); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--crema); }
+  .td-curso { font-weight: 600; color: var(--gris-oscuro); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 17px; font-weight: 600; }
+  .badge-verde { background: #D1FAE5; color: #065F46; }
+  .badge-rojo { background: #FEE2E2; color: #991B1B; }
+  .badge-amarillo { background: #FEF3C7; color: #92400E; }
+  .badge-gris { background: #F3F4F6; color: #374151; }
+
+  /* INTERPRETACIÓN PEDAGÓGICA */
+  .interpretacion {
+    background: linear-gradient(135deg, #FFF8E7 0%, #FDF3D0 100%);
+    border-left: 4px solid var(--dorado);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-top: 24px;
+    position: relative;
+  }
+  .interpretacion::before {
+    content: '✦';
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    color: var(--dorado-claro);
+    font-size: 23px;
+  }
+  .interpretacion-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--rojo);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .interpretacion p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--gris-medio);
+  }
+  .interpretacion strong { color: var(--gris-oscuro); }
+
+  /* NUBE DE PALABRAS */
+  .nube-container {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  #nube-canvas {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+  }
+  .palabra {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    cursor: default;
+    transition: transform 0.2s, opacity 0.2s;
+    line-height: 1.2;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  .palabra:hover { transform: scale(1.1); opacity: 0.8; }
+
+  /* COMPARATIVO CURSOS */
+  .heatmap { width: 100%; border-collapse: collapse; }
+  .heatmap th, .heatmap td { padding: 10px 14px; text-align: center; font-size: 16px; border: 2px solid var(--crema); }
+  .heatmap th { background: var(--crema-oscura); font-weight: 600; font-size: 17px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gris-medio); }
+  .heatmap .curso-label { text-align: left; font-weight: 600; color: var(--gris-oscuro); }
+  .cell-verde { background: #D1FAE5; color: #065F46; font-weight: 600; }
+  .cell-verde-med { background: #A7F3D0; color: #065F46; font-weight: 600; }
+  .cell-amarillo { background: #FEF3C7; color: #92400E; font-weight: 600; }
+  .cell-rojo { background: #FEE2E2; color: #991B1B; font-weight: 600; }
+
+  /* RESPUESTAS ABIERTAS */
+  .cita {
+    background: var(--crema);
+    border-left: 3px solid var(--rojo-claro);
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    color: var(--gris-medio);
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .cita .cita-meta {
+    font-style: normal;
+    font-size: 17px;
+    color: var(--gris-claro);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* RADAR */
+  .radar-wrap { display: flex; justify-content: center; }
+
+  /* FOOTER */
+  footer {
+    background: var(--gris-oscuro);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 900px) {
+    .header-inner { padding: 24px; flex-wrap: wrap; }
+    .header-stats { margin-left: 0; }
+    main { padding: 24px; }
+    .filtros-inner { padding: 0 24px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .col-span-2 { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-escudo">SB</div>
+    <div class="header-text">
+      <h1>Filosofía y Humanismo Cristiano</h1>
+      <div class="subtitle">Colegio San Benito · Resultados Encuesta 1er Semestre 2026 · 7° y 8° Básico</div>
+    </div>
+    <div class="header-stats">
+      <div class="header-stat">
+        <div class="num" id="stat-total">191</div>
+        <div class="label">Estudiantes</div>
+      </div>
+      <div class="header-stat">
+        <div class="num">8</div>
+        <div class="label">Cursos</div>
+      </div>
+      <div class="header-stat">
+        <div class="num" id="stat-positivo">78%</div>
+        <div class="label">Valoración +</div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bar"></div>
+</header>
+
+<!-- FILTROS -->
+<div class="filtros-section">
+  <div class="filtros-inner">
+    <span class="filtros-label">Nivel</span>
+    <div class="filtro-group" id="filtro-nivel">
+      <button class="filtro-btn active" data-nivel="todos">Todos</button>
+      <button class="filtro-btn" data-nivel="7">7° Básico</button>
+      <button class="filtro-btn" data-nivel="8">8° Básico</button>
+    </div>
+    <div class="filtro-divider"></div>
+    <span class="filtros-label">Curso</span>
+    <div class="filtro-group" id="filtro-curso">
+      <button class="filtro-btn active" data-curso="todos">Todos</button>
+      <button class="filtro-btn" data-curso="7A">7A</button>
+      <button class="filtro-btn" data-curso="7B">7B</button>
+      <button class="filtro-btn" data-curso="7C">7C</button>
+      <button class="filtro-btn" data-curso="7D">7D</button>
+      <button class="filtro-btn" data-curso="8A">8A</button>
+      <button class="filtro-btn" data-curso="8B">8B</button>
+      <button class="filtro-btn" data-curso="8C">8C</button>
+      <button class="filtro-btn" data-curso="8D">8D</button>
+    </div>
+    <div class="filtro-divider"></div>
+    <span class="filtros-label">Sexo</span>
+    <div class="filtro-group" id="filtro-sexo">
+      <button class="filtro-btn active" data-sexo="todos">Todos</button>
+      <button class="filtro-btn" data-sexo="H">Hombres</button>
+      <button class="filtro-btn" data-sexo="M">Mujeres</button>
+    </div>
+    <div class="filtros-resultado" id="filtros-resultado">191 estudiantes seleccionados</div>
+  </div>
+</div>
+
+<main>
+
+  <!-- KPIs -->
+  <div class="kpi-grid">
+    <div class="kpi verde">
+      <div class="valor" id="kpi-positivo">78%</div>
+      <div class="kpi-label">Valoración positiva (P1≤2)</div>
+    </div>
+    <div class="kpi rojo">
+      <div class="valor" id="kpi-recomienda">73%</div>
+      <div class="kpi-label">Recomendarían la asignatura</div>
+    </div>
+    <div class="kpi dorado">
+      <div class="valor" id="kpi-muy-interesante">37%</div>
+      <div class="kpi-label">La encuentran muy interesante</div>
+    </div>
+    <div class="kpi azul">
+      <div class="valor" id="kpi-sin-sentido">12%</div>
+      <div class="kpi-label">No le encuentran sentido</div>
+    </div>
+  </div>
+
+  <!-- SATISFACCIÓN GENERAL -->
+  <div class="seccion">
+    <h2 class="seccion-titulo">Satisfacción general — P1: ¿Cómo has vivido las clases?</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Distribución por nivel de interés</div>
+        <div id="barras-p1"></div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Distribución por curso</div>
+        <div id="barras-cursos"></div>
+      </div>
+    </div>
+    <div class="interpretacion" id="interpretacion-satisfaccion">
+      <div class="interpretacion-titulo">Lectura pedagógica</div>
+      <p id="texto-interpretacion-satisfaccion"></p>
+    </div>
+  </div>
+
+  <!-- RECOMENDACIÓN -->
+  <div class="seccion">
+    <h2 class="seccion-titulo">¿Recomendarían la asignatura? — P2</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Distribución global</div>
+        <div class="donut-wrap">
+          <svg class="donut-svg" width="160" height="160" viewBox="0 0 160 160" id="donut-svg">
+          </svg>
+          <div class="donut-leyenda" id="donut-leyenda"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">% que recomienda por curso</div>
+        <div id="barras-recomienda"></div>
+      </div>
+    </div>
+    <div class="interpretacion">
+      <div class="interpretacion-titulo">Lectura pedagógica</div>
+      <p id="texto-interpretacion-recomendacion"></p>
+    </div>
+  </div>
+
+  <!-- ACTIVIDADES PREFERIDAS -->
+  <div class="seccion">
+    <h2 class="seccion-titulo">Actividades preferidas — P4</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-titulo">Preferencias globales</div>
+        <div id="barras-actividades"></div>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Comparativo por sexo</div>
+        <div id="barras-actividades-sexo"></div>
+      </div>
+    </div>
+    <div class="interpretacion">
+      <div class="interpretacion-titulo">Lectura pedagógica</div>
+      <p id="texto-interpretacion-actividades"></p>
+    </div>
+  </div>
+
+  <!-- TEMAS SIGNIFICATIVOS — NUBE DE PALABRAS -->
+  <div class="seccion">
+    <h2 class="seccion-titulo">Temas más significativos — P3 · Nube de palabras</h2>
+    <div class="grid-2">
+      <div class="nube-container col-span-2">
+        <div class="card-titulo">Palabras más frecuentes en respuestas abiertas (tamaño = frecuencia)</div>
+        <div id="nube-canvas"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px;">
+      <div class="card-titulo">Temas más mencionados por categoría</div>
+      <div id="barras-temas"></div>
+    </div>
+    <div class="interpretacion">
+      <div class="interpretacion-titulo">Lectura pedagógica</div>
+      <p id="texto-interpretacion-temas"></p>
+    </div>
+  </div>
+
+  <!-- COMPARATIVO CURSOS -->
+  <div class="seccion">
+    <h2 class="seccion-titulo">Comparativo entre cursos — Mapa de calor</h2>
+    <div class="card">
+      <div class="card-titulo">Indicadores principales por curso (%)</div>
+      <div style="overflow-x:auto;">
+        <table class="heatmap" id="heatmap-cursos"></table>
+      </div>
+    </div>
+    <div class="interpretacion">
+      <div class="interpretacion-titulo">Lectura pedagógica</div>
+      <p id="texto-interpretacion-comparativo"></p>
+    </div>
+  </div>
+
+  <!-- VOCES DESTACADAS -->
+  <div class="seccion">
+    <h2 class="seccion-titulo">Voces de los estudiantes — Respuestas abiertas destacadas</h2>
+    <div class="grid-2">
+      <div>
+        <div class="card-titulo" style="margin-bottom:12px; font-size:17px; text-transform:uppercase; letter-spacing:0.8px; color:var(--gris-claro);">Razones para recomendar</div>
+        <div id="citas-positivas"></div>
+      </div>
+      <div>
+        <div class="card-titulo" style="margin-bottom:12px; font-size:17px; text-transform:uppercase; letter-spacing:0.8px; color:var(--gris-claro);">Sugerencias de mejora</div>
+        <div id="citas-sugerencias"></div>
+      </div>
+    </div>
+    <div class="interpretacion">
+      <div class="interpretacion-titulo">Lectura pedagógica</div>
+      <p id="texto-interpretacion-voces"></p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Dashboard Filosofía y Humanismo Cristiano · Colegio San Benito · 1er Semestre 2026 · 191 encuestas procesadas
+</footer>
+
+<script>
+// =============================================
+// BASE DE DATOS COMPLETA
+// =============================================
+const DATOS = [
+  // 7A - Hombres
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"No",p3:"La realidad puede no ser percepción",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Mi mamá al estudiar filosofía",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Todos los temas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:1,silencio:1,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"No",p3:"",actividades:{conv:1,vida:0,textos:1,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:3,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:3,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"La realidad",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"No",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:3,p2:"No",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"No",p3:"",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"La realidad y las proposiciones",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Realidad percepción subjetiva",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Tipos de preguntas",actividades:{conv:1,vida:0,textos:1,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Proposiciones juicio percepción",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:3,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:3,p2:"No",p3:"Ninguno",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:1,silencio:1,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"No",p3:"Tema de contradicción",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:2,p2:"No",p3:"El tema de contradicción",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:4,p2:"Sí",p3:"Conocer",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7A",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Percepción subjetiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:1}},
+  // 7B - Hombres
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Realidad los sentidos nos engañan",actividades:{conv:1,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Con sentidos nos engañan",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Existencia Ser Naturaleza Fin",actividades:{conv:0,vida:1,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:3,p2:"No",p3:"Conocer lo que uno piensa",actividades:{conv:1,vida:0,textos:1,peliculas:1,profe:0,silencio:1,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:3,p2:"Sí",p3:"Conocer",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:0,p2:"Sí",p3:"Principios lógicos identidad no contradicción",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Los 5 sentidos",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:4,p2:"No",p3:"Los 5 sentidos",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Antropología asombro",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:1,silencio:1,bien:1}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Todo me hizo pensar",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Solo hemos visto una",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Conocer",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Conocer",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Los tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Los sentidos nos engañan",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"La realidad porque sirve para la vida",actividades:{conv:0,vida:1,textos:0,peliculas:1,profe:0,silencio:1,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Realidad percepción la verdad",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Fácticas filosófica y trascendente",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Ambiv",p3:"Fácticas filosófica y trascendente",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:2,p2:"Sí",p3:"Conocer 5 sentidos",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7B",nivel:"7",sexo:"H",p1:1,p2:"Sí",p3:"Conocer y facultades del alma",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:1,silencio:1,bien:1}},
+  // 7C - Mujeres
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Hemos visto solo una",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"No hemos visto ninguna",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:4,p2:"No",p3:"No me llama la atención",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:4,p2:"No",p3:"Solo una y no me resultó interesante",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Como funciona la mente",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:3,p2:"Sí",p3:"Solo hemos visto una",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"No hemos visto casi nada",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Solo hemos visto los tipos de preguntas",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:3,p2:"Sí",p3:"No hemos visto lo que aparece en la tabla",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"No me ha interesado mucho",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"No hemos visto casi ninguna",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Vida intelectual libertad voluntad racionalidad",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:3,p2:"Sí",p3:"No me acuerdo de Antropología",actividades:{conv:0,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Solo hemos visto una",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"No hemos visto casi ninguna",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Los sentidos sí me interesan",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:3,p2:"Ambiv",p3:"Solo vimos un tema y no me interesa mucho",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Solo vimos los tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7C",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Hemos visto solo 1",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:1}},
+  // 7D - Mujeres
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Ambiv",p3:"Tipos de preguntas fácticas filosóficas trascendentes",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Los tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:3,p2:"Sí",p3:"Los tipos de preguntas",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:1,textos:1,peliculas:1,profe:0,silencio:1,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Tipos de preguntas",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Existencia Ser",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Ambiv",p3:"Tipos de preguntas filosóficas",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Existencia Ser Naturaleza Fin",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Todo me hizo pensar mucho",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Responde a muchas preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Tipos de pregunta",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Tipos de pregunta fácticas filosóficas trascendentes",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:1,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:1,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"Existencia Ser Naturaleza Fin",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:1}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Sí",p3:"5 sentidos",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Es muy interesante",actividades:{conv:1,vida:0,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:1,p2:"Sí",p3:"Existencia Ser Naturaleza Fin",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"7D",nivel:"7",sexo:"M",p1:2,p2:"Ambiv",p3:"5 sentidos",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  // 8A - Hombres
+  {curso:"8A",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"Es interesante",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Preguntas de la existencia",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:1,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Facultades del alma",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"",actividades:{conv:1,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"Voluntad",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"Facultades del alma",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Tipos de preguntas fácticas filosóficas trascendentes",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"Pirámide grados de vida",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"Las preguntas fácticas filosóficas trascendentes",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Vida intelectual",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"Facultad sensitiva y facultades del alma",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"5 sentidos y conocer",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"5 sentidos",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"5 sentidos sensibilidad externa",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:3,p2:"Sí",p3:"Facultades del alma",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"Pirámide grados de vida",actividades:{conv:1,vida:1,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:3,p2:"Sí",p3:"Antropología asombro",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Preguntas fácticas filosóficas trascendentes",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"Facultades del alma vida intelectual",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8A",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Las facultades sensitivas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  // 8B - Hombres
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"Conocer vida intelectual",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"Teoría Hilemórfica",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"No",p3:"Vida intelectual",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:3,p2:"Sí",p3:"Los tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"Tipos de preguntas",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"No",p3:"Ninguna",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"5 Sentidos",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"Existencia Ser Naturaleza y Fin",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"Características comunes de los seres vivos",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"5 Sentidos",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:1,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:1,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:3,p2:"Sí",p3:"Teoría Hilemórfica",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"Ambiv",p3:"lo del año pasado",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"lo del año pasado",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:3,p2:"No",p3:"Teoría Hilemórfica",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"No",p3:"Conocer",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"Sí",p3:"Pirámide grados de vida",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"No",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"No",p3:"Ninguna",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:2,p2:"No",p3:"lo del año pasado",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8B",nivel:"8",sexo:"H",p1:4,p2:"No",p3:"Pirámide de los grados de vida",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  // 8C - Mujeres
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Antropología y asombro",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:1,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Tipos de preguntas fácticas filosóficas trascendentes",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Existencia Ser Naturaleza Fin facultad sensitiva",actividades:{conv:0,vida:0,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Pirámide de grados de vida",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Pirámide de grados de vida",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva vida intelectual autorrealización",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva unidad cuerpo y alma",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Antropología asombro características comunes seres vivos",actividades:{conv:1,vida:0,textos:1,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Antropología asombro",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Unidad cuerpo alma existencia ser antropología asombro",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:1,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Unidad cuerpo alma",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Vida intelectual y facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad del alma unidad cuerpo alma pirámide",actividades:{conv:0,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultades del alma sensibilidad externa",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Ambiv",p3:"Pirámide de grados de vida",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Ser humano",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:1}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Pirámide de los grados de vida",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Existencia Ser Naturaleza Fin conocer sensibilidad externa",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Facultades sensitivas",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Existencia Ser Naturaleza Fin",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8C",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  // 8D - Mujeres
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Existencia Ser vida intelectual facultades unidad cuerpo alma facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Unidad cuerpo alma y facultad sensitiva",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:1,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"La autorrealización",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Unidad cuerpo alma",actividades:{conv:1,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Facultades del alma",actividades:{conv:1,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Características comunes de los seres vivos",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Unidad cuerpo alma reencarnación resurrección vida eterna",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultades del alma existencia ser naturaleza fin",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultades del alma existencia ser naturaleza fin",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva 5 sentidos",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Características comunes seres vivos existencia ser naturaleza fin",actividades:{conv:1,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Unidad cuerpo alma facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Unidad cuerpo alma",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva",actividades:{conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:1}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Teoría hilemórfica sensibilidad externa unidad cuerpo alma facultades del alma",actividades:{conv:1,vida:1,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Unidad cuerpo alma naturaleza fin",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:2,p2:"Sí",p3:"Antropología asombro facultades del alma",actividades:{conv:1,vida:0,textos:0,peliculas:0,profe:1,silencio:1,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultad sensitiva unidad cuerpo alma",actividades:{conv:0,vida:1,textos:0,peliculas:0,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Pirámide grados de vida tipos de preguntas facultades del alma",actividades:{conv:0,vida:0,textos:0,peliculas:1,profe:0,silencio:0,bien:0}},
+  {curso:"8D",nivel:"8",sexo:"M",p1:1,p2:"Sí",p3:"Facultades del alma facultad sensitiva antropología asombro",actividades:{conv:0,vida:1,textos:0,peliculas:1,profe:0,silencio:1,bien:0}},
+];
+
+// Datos de cursos consolidados
+const CURSOS_DATA = {
+  "7A": {nivel:"7",sexo:"H",n:22,p1:{1:7,2:9,3:5,4:1},p2:{si:14,no:8,ambiv:0},actividades:{conv:7,vida:2,textos:2,peliculas:15,profe:3,silencio:2,bien:12}},
+  "7B": {nivel:"7",sexo:"H",n:25,p1:{1:11,2:10,3:2,4:1},p2:{si:21,no:2,ambiv:1},actividades:{conv:16,vida:5,textos:4,peliculas:15,profe:4,silencio:3,bien:4}},
+  "7C": {nivel:"7",sexo:"M",n:19,p1:{1:6,2:7,3:4,4:2},p2:{si:16,no:2,ambiv:1},actividades:{conv:9,vida:1,textos:0,peliculas:17,profe:3,silencio:0,bien:3}},
+  "7D": {nivel:"7",sexo:"M",n:23,p1:{1:8,2:14,3:1,4:0},p2:{si:20,no:0,ambiv:3},actividades:{conv:16,vida:3,textos:3,peliculas:15,profe:2,silencio:3,bien:5}},
+  "8A": {nivel:"8",sexo:"H",n:23,p1:{1:6,2:11,3:6,4:0},p2:{si:18,no:5,ambiv:0},actividades:{conv:12,vida:6,textos:3,peliculas:12,profe:3,silencio:0,bien:4}},
+  "8B": {nivel:"8",sexo:"H",n:23,p1:{1:1,2:9,3:6,4:7},p2:{si:6,no:16,ambiv:1},actividades:{conv:7,vida:0,textos:0,peliculas:17,profe:1,silencio:0,bien:1}},
+  "8C": {nivel:"8",sexo:"M",n:26,p1:{1:23,2:3,3:0,4:0},p2:{si:25,no:0,ambiv:1},actividades:{conv:10,vida:2,textos:2,peliculas:21,profe:2,silencio:2,bien:7}},
+  "8D": {nivel:"8",sexo:"M",n:30,p1:{1:13,2:10,3:0,4:0},p2:{si:23,no:0,ambiv:0},actividades:{conv:8,vida:5,textos:0,peliculas:10,profe:2,silencio:2,bien:8}},
+};
+
+// Estado de filtros
+let estado = { nivel: "todos", curso: "todos", sexo: "todos" };
+
+// =============================================
+// FILTRADO
+// =============================================
+function filtrarDatos() {
+  return DATOS.filter(d => {
+    if (estado.nivel !== "todos" && d.nivel !== estado.nivel) return false;
+    if (estado.curso !== "todos" && d.curso !== estado.curso) return false;
+    if (estado.sexo !== "todos" && d.sexo !== estado.sexo) return false;
+    return true;
+  });
+}
+
+function filtrarCursos() {
+  return Object.entries(CURSOS_DATA).filter(([c, d]) => {
+    if (estado.nivel !== "todos" && d.nivel !== estado.nivel) return false;
+    if (estado.curso !== "todos" && c !== estado.curso) return false;
+    if (estado.sexo !== "todos" && d.sexo !== estado.sexo) return false;
+    return true;
+  });
+}
+
+// =============================================
+// HELPERS
+// =============================================
+function pct(n, total) { return total > 0 ? Math.round(n/total*100) : 0; }
+
+function barra(nombre, valor, max, colorClass, label) {
+  const pct = max > 0 ? Math.round(valor/max*100) : 0;
+  return `<div class="barra-container">
+    <div class="barra-header">
+      <span class="barra-nombre">${nombre}</span>
+      <span class="barra-valor">${label || (pct+'%')}</span>
+    </div>
+    <div class="barra-track">
+      <div class="barra-fill ${colorClass}" style="width:${pct}%"></div>
+    </div>
+  </div>`;
+}
+
+function badgeP1(p1) {
+  if (p1 <= 1) return '<span class="badge badge-verde">Muy interesante</span>';
+  if (p1 <= 2) return '<span class="badge badge-amarillo">A veces</span>';
+  if (p1 <= 3) return '<span class="badge badge-gris">Sin entusiasmo</span>';
+  return '<span class="badge badge-rojo">Sin sentido</span>';
+}
+
+// =============================================
+// RENDER: KPIs
+// =============================================
+function renderKPIs(datos) {
+  const total = datos.length;
+  if (total === 0) return;
+  const positivos = datos.filter(d => d.p1 <= 2).length;
+  const muyInteresante = datos.filter(d => d.p1 === 1).length;
+  const sinSentido = datos.filter(d => d.p1 === 4).length;
+  const recomienda = datos.filter(d => d.p2 === "Sí").length;
+
+  document.getElementById('kpi-positivo').textContent = pct(positivos,total)+'%';
+  document.getElementById('kpi-recomienda').textContent = pct(recomienda,total)+'%';
+  document.getElementById('kpi-muy-interesante').textContent = pct(muyInteresante,total)+'%';
+  document.getElementById('kpi-sin-sentido').textContent = pct(sinSentido,total)+'%';
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-positivo').textContent = pct(positivos,total)+'%';
+  document.getElementById('filtros-resultado').textContent = `${total} estudiantes seleccionados`;
+}
+
+// =============================================
+// RENDER: BARRAS P1
+// =============================================
+function renderBarrasP1(datos) {
+  const total = datos.length;
+  const c1 = datos.filter(d=>d.p1===1).length;
+  const c2 = datos.filter(d=>d.p1===2).length;
+  const c3 = datos.filter(d=>d.p1===3).length;
+  const c4 = datos.filter(d=>d.p1===4).length;
+  const max = Math.max(c1,c2,c3,c4,1);
+
+  document.getElementById('barras-p1').innerHTML =
+    barra('1 — Me han resultado interesantes', c1, max, 'verde', `${c1} (${pct(c1,total)}%)`) +
+    barra('2 — Interesantes a veces', c2, max, 'dorado', `${c2} (${pct(c2,total)}%)`) +
+    barra('3 — Sin mucho entusiasmo', c3, max, 'naranja', `${c3} (${pct(c3,total)}%)`) +
+    barra('4 — No les encuentro sentido', c4, max, 'gris', `${c4} (${pct(c4,total)}%)`);
+}
+
+// =============================================
+// RENDER: BARRAS CURSOS
+// =============================================
+function renderBarrasCursos() {
+  const cursos = filtrarCursos();
+  let html = '';
+  cursos.forEach(([c, d]) => {
+    const pos = d.p1[1] + d.p1[2];
+    const p = pct(pos, d.n);
+    const color = p>=80?'verde':p>=60?'dorado':p>=40?'naranja':'gris';
+    html += barra(c, p, 100, color, `${p}% positivo`);
+  });
+  document.getElementById('barras-cursos').innerHTML = html || '<p style="color:var(--gris-claro);font-size:16px;">Sin datos</p>';
+}
+
+// =============================================
+// RENDER: DONUT
+// =============================================
+function renderDonut(datos) {
+  const total = datos.length;
+  const si = datos.filter(d=>d.p2==="Sí").length;
+  const no = datos.filter(d=>d.p2==="No").length;
+  const ambiv = datos.filter(d=>d.p2==="Ambiv").length;
+
+  const values = [si, no, ambiv];
+  const colors = ['#2D6A4F','#8B1A1A','#C4963A'];
+  const labels = ['Sí recomienda','No recomienda','Ambivalente'];
+
+  const cx=80, cy=80, r=60, innerR=35;
+  let startAngle = -Math.PI/2;
+  let paths = '';
+
+  values.forEach((v, i) => {
+    if (v === 0) return;
+    const angle = (v/total)*Math.PI*2;
+    const endAngle = startAngle + angle;
+    const x1=cx+r*Math.cos(startAngle), y1=cy+r*Math.sin(startAngle);
+    const x2=cx+r*Math.cos(endAngle), y2=cy+r*Math.sin(endAngle);
+    const ix1=cx+innerR*Math.cos(startAngle), iy1=cy+innerR*Math.sin(startAngle);
+    const ix2=cx+innerR*Math.cos(endAngle), iy2=cy+innerR*Math.sin(endAngle);
+    const large = angle > Math.PI ? 1 : 0;
+    paths += `<path d="M${ix1},${iy1} L${x1},${y1} A${r},${r} 0 ${large},1 ${x2},${y2} L${ix2},${iy2} A${innerR},${innerR} 0 ${large},0 ${ix1},${iy1}Z" fill="${colors[i]}" opacity="0.9"/>`;
+    startAngle = endAngle;
+  });
+
+  const pctSi = pct(si, total);
+  document.getElementById('donut-svg').innerHTML = paths +
+    `<text x="${cx}" y="${cy-6}" text-anchor="middle" font-family="Playfair Display,serif" font-size="22" fill="#1E1E1E" font-weight="700">${pctSi}%</text>` +
+    `<text x="${cx}" y="${cy+14}" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#9A9A9A">recomienda</text>`;
+
+  document.getElementById('donut-leyenda').innerHTML = values.map((v,i) =>
+    `<div class="leyenda-item"><div class="leyenda-dot" style="background:${colors[i]}"></div><span style="font-size:16px;color:var(--gris-medio)">${labels[i]}: <strong>${v}</strong> (${pct(v,total)}%)</span></div>`
+  ).join('');
+}
+
+// =============================================
+// RENDER: RECOMIENDA POR CURSO
+// =============================================
+function renderRecomiendaCursos() {
+  const cursos = filtrarCursos();
+  let html = '';
+  cursos.forEach(([c, d]) => {
+    const p = pct(d.p2.si, d.n);
+    const color = p>=80?'verde':p>=60?'dorado':p>=40?'naranja':'gris';
+    html += barra(c, p, 100, color, `${p}%`);
+  });
+  document.getElementById('barras-recomienda').innerHTML = html || '<p style="color:var(--gris-claro);font-size:16px;">Sin datos</p>';
+}
+
+// =============================================
+// RENDER: ACTIVIDADES
+// =============================================
+function renderActividades(datos) {
+  const total = datos.length;
+  const sumas = {conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0};
+  datos.forEach(d => Object.keys(sumas).forEach(k => sumas[k] += d.actividades[k]||0));
+  const max = Math.max(...Object.values(sumas), 1);
+
+  const nombres = {
+    peliculas:'Películas y arte',
+    conv:'Conversar y debatir',
+    bien:'Está bien como está',
+    vida:'Preguntas de vida cotidiana',
+    textos:'Textos y libros',
+    profe:'El profe comparte su visión',
+    silencio:'Silencio y reflexión'
+  };
+  const colores = {peliculas:'rojo',conv:'dorado',bien:'verde',vida:'naranja',textos:'naranja',profe:'gris',silencio:'gris'};
+
+  const ordenado = Object.entries(sumas).sort((a,b)=>b[1]-a[1]);
+  document.getElementById('barras-actividades').innerHTML =
+    ordenado.map(([k,v]) => barra(nombres[k], v, max, colores[k], `${v} votos (${pct(v,total)}%)`)).join('');
+}
+
+function renderActividadesSexo() {
+  const hombres = DATOS.filter(d=>{
+    if(estado.nivel!=="todos"&&d.nivel!==estado.nivel) return false;
+    if(estado.curso!=="todos"&&d.curso!==estado.curso) return false;
+    return d.sexo==="H";
+  });
+  const mujeres = DATOS.filter(d=>{
+    if(estado.nivel!=="todos"&&d.nivel!==estado.nivel) return false;
+    if(estado.curso!=="todos"&&d.curso!==estado.curso) return false;
+    return d.sexo==="M";
+  });
+
+  const sumaH={conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0};
+  const sumaM={conv:0,vida:0,textos:0,peliculas:0,profe:0,silencio:0,bien:0};
+  hombres.forEach(d=>Object.keys(sumaH).forEach(k=>sumaH[k]+=d.actividades[k]||0));
+  mujeres.forEach(d=>Object.keys(sumaM).forEach(k=>sumaM[k]+=d.actividades[k]||0));
+
+  const nH = hombres.length||1, nM = mujeres.length||1;
+  const nombres = {peliculas:'Películas',conv:'Debatir',bien:'Está bien',vida:'Vida cotidiana',textos:'Textos',profe:'Profe comparte',silencio:'Silencio'};
+
+  let html = '';
+  Object.entries(nombres).forEach(([k,n])=>{
+    const pH = pct(sumaH[k],nH), pM = pct(sumaM[k],nM);
+    html += `<div style="margin-bottom:12px;">
+      <div style="font-size:15px;font-weight:600;color:var(--gris-medio);margin-bottom:4px;">${n}</div>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <span style="font-size:17px;color:#2563EB;width:16px;text-align:right">♂</span>
+        <div style="flex:1;height:10px;background:var(--crema-oscura);border-radius:3px;overflow:hidden;">
+          <div style="width:${pH}%;height:100%;background:#2563EB;border-radius:3px;"></div>
+        </div>
+        <span style="font-size:17px;color:var(--gris-claro);width:32px">${pH}%</span>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;margin-top:3px;">
+        <span style="font-size:17px;color:#DB2777;width:16px;text-align:right">♀</span>
+        <div style="flex:1;height:10px;background:var(--crema-oscura);border-radius:3px;overflow:hidden;">
+          <div style="width:${pM}%;height:100%;background:#DB2777;border-radius:3px;"></div>
+        </div>
+        <span style="font-size:17px;color:var(--gris-claro);width:32px">${pM}%</span>
+      </div>
+    </div>`;
+  });
+  document.getElementById('barras-actividades-sexo').innerHTML = html;
+}
+
+// =============================================
+// RENDER: NUBE DE PALABRAS
+// =============================================
+function renderNube(datos) {
+  const stopwords = new Set(['de','la','el','los','las','un','una','y','en','que','me','mi','por','a','con','se','es','para','del','lo','al','como','no','te','hay','si','le','este','esta','su','una','sus','más','pero','o','sobre','también','solo','hemos','visto','solo','una','muy','sí','nos','ya','tan','eso','esto','todo','todos','todas','fue','han','ha','he','yo','tu','él']);
+
+  const freq = {};
+  datos.forEach(d => {
+    if (!d.p3) return;
+    d.p3.toLowerCase().split(/\s+/).forEach(w => {
+      w = w.replace(/[^a-záéíóúñ]/gi,'');
+      if (w.length > 3 && !stopwords.has(w)) {
+        freq[w] = (freq[w]||0) + 1;
+      }
+    });
+  });
+
+  const palabras = Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,40);
+  if (palabras.length === 0) {
+    document.getElementById('nube-canvas').innerHTML = '<p style="color:var(--gris-claro);font-size:17px;">Sin respuestas abiertas en la selección actual</p>';
+    return;
+  }
+  const maxFreq = palabras[0][1];
+  const colores = ['var(--rojo)','var(--dorado)','var(--verde)','#2563EB','var(--naranja)','var(--rojo-claro)','#7C3AED','#059669'];
+
+  document.getElementById('nube-canvas').innerHTML = palabras.map(([w, f], i) => {
+    const size = 14 + Math.round((f/maxFreq)*28);
+    const color = colores[i % colores.length];
+    const opacity = 0.5 + (f/maxFreq)*0.5;
+    return `<span class="palabra" style="font-size:${size}px;color:${color};opacity:${opacity}" title="${f} menciones">${w}</span>`;
+  }).join('');
+}
+
+// =============================================
+// RENDER: TEMAS
+// =============================================
+function renderTemas(datos) {
+  const temas = {
+    'Facultad sensitiva / 5 sentidos': 0,
+    'Tipos de preguntas': 0,
+    'Existencia, Ser, Naturaleza, Fin': 0,
+    'Unidad cuerpo y alma': 0,
+    'Antropología y asombro': 0,
+    'Facultades del alma': 0,
+    'Pirámide grados de vida': 0,
+    'Características seres vivos': 0,
+    'Realidad y percepción': 0,
+    'Teoría Hilemórfica': 0,
+  };
+  const mapeo = [
+    [['sensitiv','sentidos','sensibilidad'], 'Facultad sensitiva / 5 sentidos'],
+    [['preguntas','fácticas','trascendente','filosófica','tipo'], 'Tipos de preguntas'],
+    [['existencia','naturaleza','fin','ser'], 'Existencia, Ser, Naturaleza, Fin'],
+    [['cuerpo','alma','unidad'], 'Unidad cuerpo y alma'],
+    [['antropología','asombro'], 'Antropología y asombro'],
+    [['facultades','intelectual','voluntad','intelectiva'], 'Facultades del alma'],
+    [['pirámide','grados'], 'Pirámide grados de vida'],
+    [['vivos','características','seres'], 'Características seres vivos'],
+    [['realidad','percepción','proposicion','contradicc'], 'Realidad y percepción'],
+    [['hilemórf'], 'Teoría Hilemórfica'],
+  ];
+
+  datos.forEach(d => {
+    if (!d.p3) return;
+    const lower = d.p3.toLowerCase();
+    mapeo.forEach(([keywords, tema]) => {
+      if (keywords.some(k => lower.includes(k))) temas[tema]++;
+    });
+  });
+
+  const ordenado = Object.entries(temas).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
+  const max = ordenado[0]?.[1] || 1;
+  const colores = ['rojo','dorado','verde','naranja','rojo','dorado','verde','naranja','gris','gris'];
+  document.getElementById('barras-temas').innerHTML = ordenado.map(([t,v],i) =>
+    barra(t, v, max, colores[i], `${v} menciones`)
+  ).join('') || '<p style="color:var(--gris-claro);font-size:16px;">Sin datos</p>';
+}
+
+// =============================================
+// RENDER: HEATMAP
+// =============================================
+function renderHeatmap() {
+  const cursos = filtrarCursos();
+  let html = `<thead><tr>
+    <th class="curso-label">Curso</th>
+    <th>Nivel</th>
+    <th>Sexo</th>
+    <th>N</th>
+    <th>% Positivo P1≤2</th>
+    <th>% Recomienda</th>
+    <th>% Muy interesante</th>
+    <th>% Sin sentido</th>
+  </tr></thead><tbody>`;
+
+  cursos.forEach(([c, d]) => {
+    const pos = pct(d.p1[1]+d.p1[2], d.n);
+    const rec = pct(d.p2.si, d.n);
+    const muy = pct(d.p1[1], d.n);
+    const sin = pct(d.p1[4], d.n);
+
+    const cellClass = v => v>=80?'cell-verde':v>=65?'cell-verde-med':v>=50?'cell-amarillo':'cell-rojo';
+    const cellClassInv = v => v<=5?'cell-verde':v<=15?'cell-amarillo':'cell-rojo';
+
+    html += `<tr>
+      <td class="td-curso">${c}</td>
+      <td>${d.nivel}°</td>
+      <td>${d.sexo==='H'?'♂ H':'♀ M'}</td>
+      <td><strong>${d.n}</strong></td>
+      <td class="${cellClass(pos)}">${pos}%</td>
+      <td class="${cellClass(rec)}">${rec}%</td>
+      <td class="${cellClass(muy)}">${muy}%</td>
+      <td class="${cellClassInv(sin)}">${sin}%</td>
+    </tr>`;
+  });
+  html += '</tbody>';
+  document.getElementById('heatmap-cursos').innerHTML = html;
+}
+
+// =============================================
+// RENDER: CITAS
+// =============================================
+function renderCitas() {
+  const citasPos = [
+    {texto:"Me ayuda a conocerme mejor, me ha servido como psicólogo.",meta:"8A — Hombre"},
+    {texto:"Es como un descanso para las otras materias, te relajas en algo muy interesante.",meta:"7C — Mujer"},
+    {texto:"Siento que es un espacio donde se hablan temas que no salen en ninguna otra parte.",meta:"8D — Mujer"},
+    {texto:"En cada clase surgen nuevas preguntas muy profundas.",meta:"8A — Hombre"},
+    {texto:"Te ayuda a pensar más allá de lo científico, te ayuda a conocerte.",meta:"7D — Mujer"},
+    {texto:"El profesor tiene una muy emocionante manera de explicar y eso motiva.",meta:"7C — Mujer"},
+  ];
+  const citasSug = [
+    {texto:"Me encanta pero me desentiusiasma que el profe llegue y apunte directo.",meta:"7C — Mujer"},
+    {texto:"Que las clases sean más variadas y no todas iguales.",meta:"8B — Hombre"},
+    {texto:"Me gustaría que hicieran más actividades como la galería.",meta:"8C — Mujer"},
+    {texto:"Que no cuente para la nota y que sea recreativa.",meta:"8B — Hombre"},
+    {texto:"Hacer actividades en vez de escribir; hacer la clase en otros lugares.",meta:"7C — Mujer"},
+    {texto:"Me gustaría tener dos horas a la semana.",meta:"8D — Mujer"},
+  ];
+
+  document.getElementById('citas-positivas').innerHTML = citasPos.map(c =>
+    `<div class="cita">"${c.texto}"<div class="cita-meta">${c.meta}</div></div>`
+  ).join('');
+  document.getElementById('citas-sugerencias').innerHTML = citasSug.map(c =>
+    `<div class="cita">"${c.texto}"<div class="cita-meta">${c.meta}</div></div>`
+  ).join('');
+}
+
+// =============================================
+// INTERPRETACIONES PEDAGÓGICAS
+// =============================================
+function renderInterpretaciones(datos) {
+  const total = datos.length;
+  const pos = datos.filter(d=>d.p1<=2).length;
+  const rec = datos.filter(d=>d.p2==="Sí").length;
+  const muy = datos.filter(d=>d.p1===1).length;
+  const sinS = datos.filter(d=>d.p1===4).length;
+  const pPos = pct(pos,total), pRec = pct(rec,total), pMuy = pct(muy,total), pSin = pct(sinS,total);
+
+  let nivel = estado.nivel==="7"?"7° básico":estado.nivel==="8"?"8° básico":"ambos niveles";
+  let curso = estado.curso!=="todos"?`el curso ${estado.curso}`:"todos los cursos";
+  let sexo = estado.sexo==="H"?"los hombres":estado.sexo==="M"?"las mujeres":"todos los estudiantes";
+
+  // Satisfacción
+  let textoSat = `En ${curso} (${nivel}), <strong>${pPos}% de ${sexo}</strong> valora positivamente la asignatura (opciones 1 o 2). `;
+  if (pPos >= 85) textoSat += `Este es un resultado <strong>excepcional</strong> que revela un alto grado de sintonía entre el proyecto de HC y los intereses de los estudiantes. La asignatura logra capturar la atención de la gran mayoría.`;
+  else if (pPos >= 70) textoSat += `Es un resultado <strong>sólido</strong>, que indica que la mayoría de los estudiantes encuentra sentido o interés en la asignatura. Hay margen para profundizar en estrategias que conviertan los "a veces interesante" en experiencias más consistentes.`;
+  else if (pPos >= 50) textoSat += `Es un resultado <strong>intermedio</strong> que merece atención. Existe una base receptiva, pero también un grupo significativo que todavía no conecta con los contenidos o la metodología. Conviene identificar los factores específicos de desenganche.`;
+  else textoSat += `Este resultado <strong>es una señal de alerta</strong>. Una proporción relevante de estudiantes no está encontrando sentido en la asignatura. Puede ser útil revisar la metodología, la conexión con la vida cotidiana y la percepción de utilidad de los contenidos.`;
+  document.getElementById('texto-interpretacion-satisfaccion').innerHTML = textoSat;
+
+  // Recomendación
+  let textoRec = `El <strong>${pRec}% de ${sexo}</strong> recomendaría la asignatura a otros. `;
+  if (pRec >= 80) textoRec += `Este altísimo índice de recomendación es uno de los indicadores más poderosos: significa que los estudiantes no solo toleran la asignatura, sino que la consideran valiosa para otros. Es un indicio de que la experiencia genera valor percibido genuino, más allá de la nota.`;
+  else if (pRec >= 60) textoRec += `La mayoría recomendaría la asignatura, lo que habla bien del valor percibido. Sin embargo, hay un grupo que duda o rechaza recomendarla. Las razones suelen ser: percepción de solapamiento con Religión, peso en el promedio, o falta de conexión con la vida práctica.`;
+  else textoRec += `El bajo índice de recomendación es una señal importante. Las razones más frecuentes mencionadas incluyen la percepción de redundancia con Religión, la presión evaluativa, y la dificultad para ver la utilidad práctica. Esto sugiere trabajar la <em>identidad diferenciada</em> de la asignatura y reducir la ansiedad por la calificación.`;
+  document.getElementById('texto-interpretacion-recomendacion').innerHTML = textoRec;
+
+  // Actividades
+  const peliculas = datos.reduce((s,d)=>s+d.actividades.peliculas,0);
+  const conv = datos.reduce((s,d)=>s+d.actividades.conv,0);
+  const bien = datos.reduce((s,d)=>s+d.actividades.bien,0);
+  const top = peliculas>=conv?"películas y arte":"conversación y debate";
+  document.getElementById('texto-interpretacion-actividades').innerHTML =
+    `La actividad más solicitada es <strong>${top}</strong>. Esto es pedagógicamente significativo: los estudiantes prefieren experiencias que activen la reflexión de manera sensorial o dialógica, por sobre el trabajo individual con textos. La combinación de estímulos audiovisuales (películas, arte) con conversación dirigida podría ser la fórmula más eficaz para esta etapa. El <strong>${pct(bien,total)}% que dice que la clase "está bien como está"</strong> sugiere también un núcleo de estudiantes satisfechos con el formato actual.`;
+
+  // Temas
+  document.getElementById('texto-interpretacion-temas').innerHTML =
+    `Los temas que más resuenan entre los estudiantes son aquellos que conectan con <strong>la experiencia corporal y sensorial</strong> (facultad sensitiva, 5 sentidos), con <strong>las preguntas sobre la identidad</strong> (existencia, naturaleza, fin) y con <strong>la unidad cuerpo-alma</strong>. Esto revela que los estudiantes responden mejor a los contenidos de la asignatura cuando estos iluminan su propia experiencia vivida. Los temas más abstractos o formales (teoría hilemórfica, lógica) generan menor resonancia espontánea, aunque algunos estudiantes los rescatan con claridad.`;
+
+  // Comparativo
+  document.getElementById('texto-interpretacion-comparativo').innerHTML =
+    `El mapa de calor revela diferencias notables entre cursos: <strong>8C destaca por su alto índice de valoración positiva</strong> (100%), mientras que <strong>8B presenta el resultado más crítico</strong> (43% positivo, 26% recomienda). Esta brecha no puede explicarse solo por los contenidos —son similares— sino por factores como el clima de aula, la relación pedagógica, la percepción de utilidad o la composición del grupo. El análisis por sexo muestra que las <strong>mujeres de 8° tienden a valorar más positivamente</strong> la asignatura que sus pares hombres.`;
+
+  // Voces
+  document.getElementById('texto-interpretacion-voces').innerHTML =
+    `Las respuestas abiertas revelan dos tensiones centrales en la experiencia de los estudiantes. Por un lado, una búsqueda genuina de <strong>sentido, autoconocimiento y preguntas profundas</strong>: muchos describen la asignatura como un espacio único donde se hablan cosas que no aparecen en ninguna otra parte. Por otro lado, hay una demanda de <strong>mayor variedad metodológica</strong>: más actividades, más movimiento, más diálogo, menos dictado directo. Esta tensión es una oportunidad creativa: el contenido ya genera interés; el desafío es encontrar formatos que potencien esa chispa filosófica de manera más dinámica e interactiva.`;
+}
+
+// =============================================
+// RENDER PRINCIPAL
+// =============================================
+function renderTodo() {
+  const datos = filtrarDatos();
+  renderKPIs(datos);
+  renderBarrasP1(datos);
+  renderBarrasCursos();
+  renderDonut(datos);
+  renderRecomiendaCursos();
+  renderActividades(datos);
+  renderActividadesSexo();
+  renderNube(datos);
+  renderTemas(datos);
+  renderHeatmap();
+  renderCitas();
+  renderInterpretaciones(datos);
+}
+
+// =============================================
+// FILTROS — EVENT LISTENERS
+// =============================================
+document.getElementById('filtro-nivel').querySelectorAll('.filtro-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('filtro-nivel').querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    estado.nivel = btn.dataset.nivel;
+    // Reset curso si no coincide con nivel
+    if (estado.nivel !== "todos" && estado.curso !== "todos") {
+      if (!estado.curso.startsWith(estado.nivel)) {
+        estado.curso = "todos";
+        document.getElementById('filtro-curso').querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));
+        document.querySelector('#filtro-curso [data-curso="todos"]').classList.add('active');
+      }
+    }
+    renderTodo();
+  });
+});
+
+document.getElementById('filtro-curso').querySelectorAll('.filtro-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('filtro-curso').querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    estado.curso = btn.dataset.curso;
+    renderTodo();
+  });
+});
+
+document.getElementById('filtro-sexo').querySelectorAll('.filtro-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('filtro-sexo').querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    estado.sexo = btn.dataset.sexo;
+    renderTodo();
+  });
+});
+
+// INIT
+renderTodo();
+</script>
+</body>
+</html>
