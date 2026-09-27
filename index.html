@@ -696,20 +696,51 @@ function renderTemas(){
 
 function renderHeatmap(){
   const cursos=filtrarCursos();
+
+  const simbologia = `
+    <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;flex-wrap:wrap;">
+      <span style="font-size:14px;font-weight:600;color:var(--gris-claro);text-transform:uppercase;letter-spacing:0.5px;">Simbología:</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:14px;">
+        <span style="background:#D1FAE5;color:#065F46;padding:2px 10px;border-radius:4px;font-weight:600;">Verde ≥ 60%</span> Meta cumplida
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:14px;">
+        <span style="background:#FEF3C7;color:#92400E;padding:2px 10px;border-radius:4px;font-weight:600;">Amarillo 40–59%</span> En desarrollo
+      </span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:14px;">
+        <span style="background:#FEE2E2;color:#991B1B;padding:2px 10px;border-radius:4px;font-weight:600;">Rojo &lt; 40%</span> Bajo meta
+      </span>
+    </div>`;
+
   let html=`<thead><tr>
-    <th class="curso-label">Curso</th><th>Nivel</th><th>Sexo</th><th>N</th>
-    <th>% Positivo P1≤2</th><th>% Recomienda</th><th>% Muy interesante</th><th>% Sin sentido</th>
+    <th class="curso-label">Curso</th>
+    <th>Nivel</th>
+    <th>Sexo</th>
+    <th>N</th>
+    <th>% Valoración positiva<br><span style="font-weight:400;font-size:12px;text-transform:none;">(Muy interesante + A veces)</span></th>
+    <th>% Recomienda</th>
+    <th>% Sin sentido</th>
   </tr></thead><tbody>`;
+
   cursos.forEach(([c,d])=>{
-    const pos=pct(d.p1[1]+d.p1[2],d.np1),rec=pct(d.p2.si,d.np2),muy=pct(d.p1[1],d.np1),sin=pct(d.p1[4],d.np1);
-    const cc=v=>v>=80?'cell-verde':v>=65?'cell-verde-med':v>=50?'cell-amarillo':'cell-rojo';
+    const pos=pct(d.p1[1]+d.p1[2],d.np1);
+    const rec=pct(d.p2.si,d.np2);
+    const sin=pct(d.p1[4],d.np1);
+    const cc=v=>v>=60?'cell-verde':v>=40?'cell-amarillo':'cell-rojo';
     const cci=v=>v<=5?'cell-verde':v<=15?'cell-amarillo':'cell-rojo';
-    html+=`<tr><td class="td-curso">${c}</td><td>${d.nivel}°</td><td>${d.sexo==='H'?'♂ H':'♀ M'}</td><td><strong>${d.n}</strong></td>
-      <td class="${cc(pos)}">${pos}%</td><td class="${cc(rec)}">${rec}%</td>
-      <td class="${cc(muy)}">${muy}%</td><td class="${cci(sin)}">${sin}%</td></tr>`;
+    html+=`<tr>
+      <td class="td-curso">${c}</td>
+      <td>${d.nivel}°</td>
+      <td>${d.sexo==='H'?'♂ H':'♀ M'}</td>
+      <td><strong>${d.n}</strong></td>
+      <td class="${cc(pos)}">${pos}%</td>
+      <td class="${cc(rec)}">${rec}%</td>
+      <td class="${cci(sin)}">${sin}%</td>
+    </tr>`;
   });
   html+='</tbody>';
+
   document.getElementById('heatmap-cursos').innerHTML=html;
+  document.getElementById('heatmap-cursos').insertAdjacentHTML('beforebegin', simbologia);
 }
 
 function renderCitas(){
